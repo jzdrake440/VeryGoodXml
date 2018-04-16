@@ -1,4 +1,4 @@
-﻿namespace VeryGoodXml.Context
+﻿namespace VeryGoodXml
 {
     public interface IVgXmlTargetedPropertyContext : IVgXmlPropertyContext
     {

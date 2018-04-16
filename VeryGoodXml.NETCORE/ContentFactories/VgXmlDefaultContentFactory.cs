@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Xml;
-using VeryGoodXml.Context;
-using VeryGoodXml.Entities.Enumerations;
 
-namespace VeryGoodXml.ContentFactories
+namespace VeryGoodXml
 {
     public class VgXmlDefaultContentFactory : IVgXmlContentFactory
     {

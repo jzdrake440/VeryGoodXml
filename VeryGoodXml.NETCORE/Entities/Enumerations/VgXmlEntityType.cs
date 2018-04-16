@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VeryGoodXml.Entities.Enumerations
+namespace VeryGoodXml
 {
     public enum VgXmlEntityType
     {

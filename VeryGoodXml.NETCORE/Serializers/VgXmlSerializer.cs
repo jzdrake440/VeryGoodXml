@@ -2,17 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Xml;
-using VeryGoodXml.Attributes;
-using VeryGoodXml.Context;
-using VeryGoodXml.ContentFactories;
-using VeryGoodXml.Entities.Enumerations;
-using VeryGoodXml.Entities.Names;
-using VeryGoodXml.Entities.Names.Attributes;
-using VeryGoodXml.Entities.Names.Enumerations;
 
-namespace VeryGoodXml.Serializers
+namespace VeryGoodXml
 {
     public sealed class VgXmlSerializer
     {

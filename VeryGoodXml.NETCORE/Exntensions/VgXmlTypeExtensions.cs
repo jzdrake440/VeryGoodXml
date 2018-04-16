@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace VeryGoodXml.Exntensions
+namespace VeryGoodXml
 {
     public static class VgXmlTypeExtensions
     {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using VeryGoodXml.Entities.Enumerations;
-using VeryGoodXml.Serializers;
-
-namespace VeryGoodXml.Attributes
+﻿namespace VeryGoodXml
 {
     public class VgXmlElementAttribute : VgXmlEntityAttribute
     {

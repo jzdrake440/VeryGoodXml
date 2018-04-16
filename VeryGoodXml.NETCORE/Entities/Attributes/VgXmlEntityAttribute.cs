@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using VeryGoodXml.ContentFactories;
-using VeryGoodXml.Entities.Enumerations;
-using VeryGoodXml.Serializers;
 
-namespace VeryGoodXml.Attributes
+namespace VeryGoodXml
 {
     [AttributeUsage(
         AttributeTargets.Property,

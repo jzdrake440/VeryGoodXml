@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using VeryGoodXml.Attributes;
-using VeryGoodXml.Entities.Enumerations;
-
-namespace VeryGoodXml.Entities.Attributes
+﻿namespace VeryGoodXml
 {
     public class VgXmlRawElementAttribute : VgXmlEntityAttribute
     {

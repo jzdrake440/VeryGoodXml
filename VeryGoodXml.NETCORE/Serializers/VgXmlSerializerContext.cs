@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml;
-using VeryGoodXml.Serializers;
 
-namespace VeryGoodXml.Context
+namespace VeryGoodXml
 {
     public abstract class VgXmlSerializerContext : IVgXmlSerializerContext
     {

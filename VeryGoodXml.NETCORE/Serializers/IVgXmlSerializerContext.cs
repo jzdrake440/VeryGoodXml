@@ -1,7 +1,6 @@
 ﻿using System.Xml;
-using VeryGoodXml.Serializers;
 
-namespace VeryGoodXml.Context
+namespace VeryGoodXml
 {
     public interface IVgXmlSerializerContext
     {
