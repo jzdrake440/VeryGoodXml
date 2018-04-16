@@ -67,7 +67,6 @@ namespace VeryGoodXml
 
         public bool NameMatches(string name) =>
             GetOptions<IVgXmlNameMatcher>()
-            .Where(o => o is IVgXmlNameMatcher)
             .DefaultIfEmpty(_defaultName)
             .Any(nm => nm.IsMatch(name));
 
@@ -84,11 +83,11 @@ namespace VeryGoodXml
             if (_nameContainerProperty.Value != null &&
                 !string.IsNullOrWhiteSpace(nameContainerValue))
             {
-                //no defined names, so just use w/e is stored in container
-                if (GetOptions<IVgXmlNameGenerator>().Count() == 0)
+                //no matchers defined, so just use w/e is stored in container
+                if (GetOptions<IVgXmlNameMatcher>().Count() == 0)
                     return nameContainerValue;
 
-                //with defined names, the container value must match
+                //with matchers defined, the container value must match
                 if (NameMatches(nameContainerValue))
                     return nameContainerValue;
 
@@ -96,8 +95,12 @@ namespace VeryGoodXml
                     $"{nameof(VgXmlNameContainerAttribute)} for a property, but it's value failed to match.");
             }
 
-            return GenerateName(subEntity) ??
-                throw new InvalidOperationException("Could not determine appropriate name.");
+            var name = GenerateName(subEntity);
+
+            if (NameMatches(name))
+                return name;
+
+            throw new InvalidOperationException("Could not determine appropriate name.");
         }
     }
 }

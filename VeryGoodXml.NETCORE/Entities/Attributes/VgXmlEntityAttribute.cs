@@ -18,10 +18,10 @@ namespace VeryGoodXml
                 return null;
 
             if (!ContentFactory.GetInterfaces().Any(i => i == typeof(IVgXmlContentFactory)))
-                throw new ArgumentException($"{nameof(ContentFactory)} must be type that implements {nameof(IVgXmlContentFactory)}.");
+                throw new InvalidOperationException($"{nameof(ContentFactory)} must be type that implements {nameof(IVgXmlContentFactory)}.");
 
             var constructor = ContentFactory.GetConstructor(System.Type.EmptyTypes) ??
-                throw new ArgumentException($"{nameof(ContentFactory)} must have default constructor.");
+                throw new InvalidOperationException($"{nameof(ContentFactory)} must have default constructor.");
 
             return constructor.Invoke(new object[] { }) as IVgXmlContentFactory;
         }

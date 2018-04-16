@@ -11,7 +11,7 @@ namespace VeryGoodXml.NETCORE.Tests.PropertyContexts
         [Test]
         public void Property_EqualsInputProperty()
         {
-            var property = typeof(TestClass).GetProperty(nameof(TestClass.StringElement));
+            var property = typeof(TestClass).GetProperty(nameof(TestClass.StaticRegexStringElement));
             var context = VgXmlPropertyContext.CreateContext(property);
 
             Assert.That(context.Property, Is.EqualTo(property));
@@ -20,13 +20,13 @@ namespace VeryGoodXml.NETCORE.Tests.PropertyContexts
         [Test]
         public void PropertyType_ReturnsPropertyInfoPropertyType()
         {
-            var property = typeof(TestClass).GetProperty(nameof(TestClass.StringElement));
+            var property = typeof(TestClass).GetProperty(nameof(TestClass.StaticRegexStringElement));
             var context = VgXmlPropertyContext.CreateContext(property);
 
             Assert.That(context.PropertyType, Is.EqualTo(property.PropertyType));
         }
 
-        [TestCase(nameof(TestClass.StringElement), VgXmlEntityType.Element)]
+        [TestCase(nameof(TestClass.StaticRegexStringElement), VgXmlEntityType.Element)]
         [TestCase(nameof(TestClass.StringAttribute), VgXmlEntityType.Attribute)]
         [TestCase(nameof(TestClass.StringRawElement), VgXmlEntityType.RawElement)]
         public void EntityType_ReturnsEntityTypeDeclaredInPropertyDecoration(string propertyName, VgXmlEntityType expectedEntityType)

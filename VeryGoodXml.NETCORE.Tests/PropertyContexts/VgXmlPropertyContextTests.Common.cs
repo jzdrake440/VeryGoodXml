@@ -11,12 +11,13 @@ namespace VeryGoodXml.NETCORE.Tests.PropertyContexts
         public class TestClass
         {
             public const string StringElementName_Static = "StaticName";
-            public const string StringElementName_Regex = "RegexName*";
+            public const string StringElementName_Static2 = "StaticName2";
+            public const string StringElementName_Regex = "RegexName.*";
 
             [VgXmlElement]
             [VgXmlStaticName(StringElementName_Static)]
             [VgXmlRegexName(StringElementName_Regex)]
-            public string StringElement { get; set; }
+            public string StaticRegexStringElement { get; set; }
 
             [VgXmlAttribute]
             public string StringAttribute { get; set; }
@@ -26,6 +27,42 @@ namespace VeryGoodXml.NETCORE.Tests.PropertyContexts
 
             [VgXmlRawElement]
             public List<string> CollectionElement { get; set; }
+            
+            [VgXmlElement]
+            [VgXmlStaticName(StringElementName_Static)]
+            [VgXmlStaticName(StringElementName_Static2)]
+            public string StaticStringElement { get; set; }
+
+            [VgXmlElement]
+            [VgXmlRegexName(StringElementName_Regex)]
+            public string RegexStringElement { get; set; }
+
+            [VgXmlElement]
+            public TestSubElement NameContainerElement { get; set; }
+
+            [VgXmlElement]
+            [VgXmlStaticName(StringElementName_Static)]
+            [VgXmlStaticName(StringElementName_Static2)]
+            [VgXmlRegexName(StringElementName_Regex)]
+            public TestSubElement StaticRegexNameContainerElement { get; set; }
+        }
+
+        public class TestSubElement
+        {
+            [VgXmlNameContainer]
+            public string TagName { get; set; }
+        }
+
+        private TestClass _testObj;
+
+        [SetUp]
+        public void Setup()
+        {
+            _testObj = new TestClass
+            {
+                NameContainerElement = new TestSubElement(),
+                StaticRegexNameContainerElement = new TestSubElement()
+            };
         }
     }
 }
