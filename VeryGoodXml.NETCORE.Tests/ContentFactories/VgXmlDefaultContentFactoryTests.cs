@@ -1,12 +1,7 @@
 ﻿using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Xml;
-using VeryGoodXml.Attributes;
-using VeryGoodXml.Entities.Names.Attributes;
-using VeryGoodXml.Serializers;
 
 namespace VeryGoodXml.NETCORE.Tests.ContentFactories
 {
@@ -21,7 +16,7 @@ namespace VeryGoodXml.NETCORE.Tests.ContentFactories
         private class TestRoot
         {
             [VgXmlElement]
-            [VgXmlName("TestElement")]
+            [VgXmlStaticName("TestElement")]
             public List<string> Elements { get; set; }
         }
 
